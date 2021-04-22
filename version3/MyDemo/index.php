@@ -17,37 +17,23 @@ $users = $userManager->getAll();
 </head>
 <style>
 
-    table {
-        border: 1px black solid;
-        border-collapse: collapse;
-        width: 100%;
-        height: 30px;
-        text-align: center;
-    }
-
-    th {
-        height: 30px;
-    }
-
-    td {
-        height: 25px;
-    }
-
-    tr:hover {
-        background-color: wheat;
-        cursor: pointer;
-    }
-
     h1 {
         text-align: center;
+        margin-top: 50px;
     }
-    a{
-        margin: 10px;
+
+    a {
+        margin-right: 10px;
+    }
+    div{
+        float: right;
     }
 </style>
 <body>
-<a href="add.php">Đăng ký</a>
-<a href="logIn.php">Đăng nhập</a>
+<div>
+    <a href="add.php">Đăng ký</a>
+    <a href="logIn.php">Đăng nhập</a>
+</div>
 <h1>Hello world !</h1>
 </body>
 </html>

@@ -36,9 +36,7 @@ class UserManager
     {
         $dataFile = $this->loadDataFile();
         $lastUser = $dataFile[count($dataFile) - 1];
-
         $data["id"] = $lastUser->id + 1;
-
         array_push($dataFile, $data);
         $this->saveDataToFile($dataFile);
     }
@@ -50,13 +48,31 @@ class UserManager
         file_put_contents($this->filePath, $dataJson);
     }
 
+    public function checkAdd($acc)
+    {
+        $user = $this->loadDataFile();
+        foreach ($user as $item){
+            if ($acc == $item->userName){
+                return false;
+            }
+        }
+        return true;
+    }
 
-    public function getUserLogIn($userName, $password){
+    public function checkUser($name, $pass)
+    {
         $data = $this->loadDataFile();
-
-                $data->userName = $userName;
-                $data->password = $password;
-
+        foreach ($data as $item) {
+            if ($name == $item->userName) {
+                if ($pass == $item->password) {
+                    $_SESSION["userName"] = $item->userName;
+                        return true;
+                } else {
+                    return "Sai mật khẩu !";
+                }
+            }
+        }
+        return "Tài khoản không chính xác !";
     }
 
 }

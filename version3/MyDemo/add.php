@@ -10,14 +10,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $data = [
         'userName' => $userName,
-        'password' => md5($password),
+        'password' => base64_encode($password),
     ];
 
     $userManager = new UserManager('data.json');
-    $userManager->add($data);
-
-    header('location: index.php');
-
+    if ($userManager->checkAdd($userName)){
+        $userManager->add($data);
+        echo "Đã đăng ký thành công <a href='logIn.php'>nhấp vào đây</a> để đăng nhập hoặc <a href='index.php'>quay lại trang chủ.</a>" ;
+    }else{
+        echo "Tài khoản đã tồn tại !";
+    }
 }
 ?>
 
@@ -36,6 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     form {
+        height:180px; width:600px;
+        padding:20px;
+        border:3px blue solid;
         margin-top: 25px;
     }
 </style>
@@ -52,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="password" name="password" placeholder="Nhập mật khẩu" size="30"></td>
+                <td><input type="password" name="password" placeholder="Nhập mật khẩu" size="50"></td>
             </tr>
             <tr>
                 <td></td>

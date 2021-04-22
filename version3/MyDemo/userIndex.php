@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['userName'])){
+    echo "Welcome  " . $_SESSION['userName'];
+}else{
+    header('location: index.php');
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,41 +16,28 @@
     <title>Document</title>
 </head>
 <style>
-
-    table {
-        border: 1px black solid;
-        border-collapse: collapse;
-        width: 100%;
-        height: 30px;
-        text-align: center;
-    }
-
-    th {
-        height: 30px;
-    }
-
-    td {
-        height: 25px;
-    }
-
-    tr:hover {
-        background-color: wheat;
-        cursor: pointer;
-    }
-
     h1 {
         text-align: center;
+        margin-top: 50px;
     }
 
-    a {
-        margin: 10px;
+    form {
+        margin: 20px;
+        float: right;
     }
 </style>
 <body>
-<p>hello userName</p>
-<a onclick="return confirm('Are you want log uot?')"
-       href="index.php"><button>Dang xuat</button></a>
+<form method="post">
+    <button type="submit" onclick="return confirm('Are you want log uot?')" name="logOut">Đăng xuất</button>
+</form>
 <h1>Hello world !</h1>
 </body>
 </html>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
+    if (isset($_POST['logOut'])){
+        session_destroy();
+        header('location: index.php');
+    }
+}
