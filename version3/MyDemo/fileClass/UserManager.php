@@ -10,29 +10,29 @@ class UserManager
         $this->filePath = $filePath;
     }
 
-    function loadDataFile()
+    public function loadDataFile()
     {
         $dataFile = file_get_contents($this->filePath);
         return json_decode($dataFile);
     }
 
-    function getAll(): array
-    {
-        $data = $this->loadDataFile();
-        $users = [];
-        foreach ($data as $item) {
-            $user = new User(
-                $item->userName,
-                $item->password
-            );
-            $user->setId($item->id);
-            array_push($users, $user);
-        }
+//    function getAll(): array
+//    {
+//        $data = $this->loadDataFile();
+//        $users = [];
+//        foreach ($data as $item) {
+//            $user = new User(
+//                $item->userName,
+//                $item->password
+//            );
+//            $user->setId($item->id);
+//            array_push($users, $user);
+//        }
+//
+//        return $users;
+//    }
 
-        return $users;
-    }
-
-    function add($data)
+    public function add($data)
     {
         $dataFile = $this->loadDataFile();
         $lastUser = $dataFile[count($dataFile) - 1];
@@ -41,7 +41,7 @@ class UserManager
         $this->saveDataToFile($dataFile);
     }
 
-    function saveDataToFile($data)
+    public function saveDataToFile($data)
     {
 
         $dataJson = json_encode($data);
