@@ -98,9 +98,8 @@ $usersInformation = $userInformationManager->getAll();
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if (isset($_POST['logOut'])){
-        if (isset($_POST['edit'])){
         session_destroy();
         header('location: index.php');
         }
-    }
+
 }

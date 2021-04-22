@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "fileClass/UserInformation.php";
 include_once "fileClass/UserInformationManager.php";
 include_once "fileClass/UserManager.php";
@@ -10,27 +11,28 @@ $userInformation = $userInformationManager->getUserInformationById($_GET['id']);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $name = $_REQUEST['name'];
-    $dob = $_REQUEST['dob'];
-    $address = $_REQUEST['address'];
-    $email = $_REQUEST['email'];
-    $phone = $_REQUEST['phone'];
-    $idCard = $_REQUEST['idCard'];
+    $name = $_POST['name'];
+    $dob = $_POST['dob'];
+    $address = $_POST['address'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $idCard = $_POST['idCard'];
 
     $data = $userInformationManager->loadDataFile();
 
-    $data = [
-        'name' => $name,
-        'dob' => $dob,
-        'address' => $address,
-        'email' => $email,
-        'phone' => $phone,
-        'idCard' => $idCard,
-    ];
+    foreach ($data as $item) {
+        if ($item->id == $_GET["id"]) {
+            $item->name = $name;
+            $item->dob = $dob;
+            $item->address = $address;
+            $item->email = $email;
+            $item->phone = $phone;
+            $item->idCard = $idCard;
+        }
+    }
 
     $userInformationManager->saveDataToFile($data);
     echo "Cập nhật thông tin thành công.";
-    session_destroy();
     header('refresh:2,url=userIndex.php');
 
 }
