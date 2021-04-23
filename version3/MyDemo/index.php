@@ -46,7 +46,7 @@ $usersInformation = $userInformationManager->getAll();
             <th>Ngày sinh</th>
             <th>Địa chỉ</th>
             <th>Email</th>
-            <th>Điện thoại</th>
+            <th pattern="">Điện thoại</th>
             <th>ID Card</th>
         </tr>
         <?php foreach ($usersInformation as $key => $userInformation) { ?>
@@ -55,9 +55,9 @@ $usersInformation = $userInformationManager->getAll();
                 <td><?php echo $userInformation->getName(); ?> </td>
                 <td><?php echo $userInformation->getDob(); ?> </td>
                 <td><?php echo $userInformation->getAddress(); ?> </td>
-                <td><?php echo $userInformation->getEmail(); ?> </td>
-                <td><?php echo $userInformation->getPhone(); ?> </td>
-                <td><?php echo $userInformation->getIdCard(); ?> </td>
+                <td><?php echo preg_replace("/\w[^@.com]/","***",$userInformation->getEmail()); ?> </td>
+                <td><?php echo preg_replace("/\d{6}/","******",$userInformation->getPhone()); ?> </td>
+                <td><?php echo preg_replace("/\d{6}/","******",$userInformation->getIdCard()); ?> </td>
             </tr>
         <?php } ?>
     </table>

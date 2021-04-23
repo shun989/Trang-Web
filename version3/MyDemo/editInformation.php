@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </tr>
         <tr>
             <td>Điện thoại</td>
-            <td><input type="text" name="phone" pattern="^[0]\d{9}$" title="Số điện thoại có 9 - 12 số." placeholder="Nhập số điện thoại"></td>
+            <td><input type="text" name="phone" pattern="^[0+]\d{9}$" title="Số điện thoại có 9 - 12 số." placeholder="Nhập số điện thoại"></td>
         </tr>
         <tr>
             <td>ID Card</td>
