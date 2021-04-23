@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </style>
 <body>
 <h1 style="color: blue">Thay đổi thông tin user</h1>
-
+<a href="userIndex.php"><button style="width: 100px;margin-bottom: 20px">Hủy</button></a><br/>
 <form action="" method="post">
     <table>
         <tr>
@@ -90,9 +90,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <td></td>
             <td>
                 <button type="submit">Thay đổi</button>
-                <a href="userIndex.php">
-                    <button>Hủy</button>
-                </a>
             </td>
         </tr>
     </table>
