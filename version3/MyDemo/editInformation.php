@@ -51,18 +51,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     input {
         height: 25px;
     }
-    a {
-        margin-left: 10px;
-    }
+
 </style>
 <body>
 <h1 style="color: blue">Thay đổi thông tin user</h1>
-<a href="userIndex.php"><button>Hủy</button></a>
+
 <form action="" method="post">
     <table>
         <tr>
             <td>Name</td>
-            <td><input type="text" name="name" pattern="\w\s\{2,50}$" title="Tối đa 50 ký tự." placeholder="Nhập tên"></td>
+            <td><input type="text" name="name" pattern="\w\s\{2,50}$" title="Tối đa 50 ký tự." placeholder="Nhập tên">
+            </td>
         </tr>
         <tr>
             <td>Ngày sinh</td>
@@ -74,20 +73,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </tr>
         <tr>
             <td>Email</td>
-            <td><input type="email" name="email" pattern="^[a-z]\w[^A-Z]?=\@{50}$" title="Cú pháp abc@xyz." placeholder="Nhập email"></td>
+            <td><input type="email" name="email" pattern="^[a-z]\w[^A-Z]?=\@{50}$" title="Cú pháp abc@xyz."
+                       placeholder="Nhập email"></td>
         </tr>
         <tr>
             <td>Điện thoại</td>
-            <td><input type="text" name="phone" pattern="^[0+]\d{9}$" title="Số điện thoại có 9 - 12 số." placeholder="Nhập số điện thoại"></td>
+            <td><input type="text" name="phone" pattern="^[0+]\d{9}$" title="Số điện thoại có 9 - 12 số."
+                       placeholder="Nhập số điện thoại"></td>
         </tr>
         <tr>
             <td>ID Card</td>
-            <td><input type="text" name="idCard" pattern="\d{9,12}$" title="ID có 9 - 12 số." placeholder="Nhập số CMNN"></td>
+            <td><input type="text" name="idCard" pattern="\d{9,12}$" title="ID có 9 - 12 số."
+                       placeholder="Nhập số CMNN"></td>
         </tr>
         <tr>
             <td></td>
             <td>
                 <button type="submit">Thay đổi</button>
+                <a href="userIndex.php">
+                    <button>Hủy</button>
+                </a>
             </td>
         </tr>
     </table>
