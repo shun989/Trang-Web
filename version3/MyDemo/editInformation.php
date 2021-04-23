@@ -51,9 +51,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     input {
         height: 25px;
     }
+    a {
+        margin-left: 10px;
+    }
 </style>
 <body>
 <h1 style="color: blue">Thay đổi thông tin user</h1>
+<a href="userIndex.php"><button>Hủy</button></a>
 <form action="" method="post">
     <table>
         <tr>

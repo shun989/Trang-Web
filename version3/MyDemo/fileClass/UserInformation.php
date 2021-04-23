@@ -8,7 +8,7 @@ class UserInformation
     private string $dob;
     private string $address;
     private string $email;
-    private int $phone;
+    private string $phone;
     private string $idCard;
 
     public function __construct($name,$dob,$address,$email,$phone,$idCard)
@@ -71,7 +71,7 @@ class UserInformation
         $this->email = $email;
     }
 
-    public function getPhone(): int
+    public function getPhone(): string
     {
         return $this->phone;
     }
