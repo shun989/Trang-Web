@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['userName'])){
-    echo "Welcome  " . $_SESSION['userName'];
+    echo "Hello  " . $_SESSION['userName'];
 }else{
     header('location: index.php');
 }
@@ -86,7 +86,7 @@ $usersInformation = $userInformationManager->getAll();
                 <td><?php echo $userInformation->getIdCard(); ?> </td>
                 <td><a onclick="return confirm('Are you want delete?')"
                        href="deleteInformation.php?id=<?php echo $key ?>"><button>Delete</button></a></td>
-                <td><a name="edit" onclick="return confirm('Are you want edit?')"
+                <td><a onclick="return confirm('Are you want edit?')"
                        href="editInformation.php?id=<?php echo $userInformation->getId() ?>"><button>Edit</button></a></td>
             </tr>
         <?php } ?>

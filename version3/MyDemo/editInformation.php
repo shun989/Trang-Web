@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <table>
         <tr>
             <td>Name</td>
-            <td><input type="text" name="name" placeholder="Nhập tên"></td>
+            <td><input type="text" name="name" pattern="\w\s\{2,50}$" title="Tối đa 50 ký tự." placeholder="Nhập tên"></td>
         </tr>
         <tr>
             <td>Ngày sinh</td>
@@ -70,15 +70,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </tr>
         <tr>
             <td>Email</td>
-            <td><input type="email" name="email" placeholder="Nhập email"></td>
+            <td><input type="email" name="email" pattern="^[a-z]\w[^A-Z]?=\@{50}$" title=" Sai ngữ pháp !" placeholder="Nhập email"></td>
         </tr>
         <tr>
             <td>Điện thoại</td>
-            <td><input type="number" name="phone" placeholder="Nhập số điện thoại"></td>
+            <td><input type="number" name="phone" pattern="^[0]\d{9,12}$" placeholder="Nhập số điện thoại"></td>
         </tr>
         <tr>
             <td>ID Card</td>
-            <td><input type="text" name="idCard" placeholder="Nhập số CMNN"></td>
+            <td><input type="text" name="idCard" pattern="\d[A-Z]{12}$" placeholder="Nhập số CMNN"></td>
         </tr>
         <tr>
             <td></td>
