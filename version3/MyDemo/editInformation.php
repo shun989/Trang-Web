@@ -70,15 +70,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </tr>
         <tr>
             <td>Email</td>
-            <td><input type="email" name="email" pattern="^[a-z]\w[^A-Z]?=\@{50}$" title=" Sai ngữ pháp !" placeholder="Nhập email"></td>
+            <td><input type="email" name="email" pattern="^[a-z]\w[^A-Z]?=\@{50}$" title="Cú pháp abc@xyz." placeholder="Nhập email"></td>
         </tr>
         <tr>
             <td>Điện thoại</td>
-            <td><input type="number" name="phone" pattern="^[0]\d{9,12}$" placeholder="Nhập số điện thoại"></td>
+            <td><input type="text" name="phone" pattern="^[0]\d{9}$" title="Số điện thoại có 9 - 12 số." placeholder="Nhập số điện thoại"></td>
         </tr>
         <tr>
             <td>ID Card</td>
-            <td><input type="text" name="idCard" pattern="\d[A-Z]{12}$" placeholder="Nhập số CMNN"></td>
+            <td><input type="text" name="idCard" pattern="\d{9,12}$" title="ID có 9 - 12 số." placeholder="Nhập số CMNN"></td>
         </tr>
         <tr>
             <td></td>

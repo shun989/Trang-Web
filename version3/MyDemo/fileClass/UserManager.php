@@ -16,22 +16,6 @@ class UserManager
         return json_decode($dataFile);
     }
 
-//    function getAll(): array
-//    {
-//        $data = $this->loadDataFile();
-//        $users = [];
-//        foreach ($data as $item) {
-//            $user = new User(
-//                $item->userName,
-//                $item->password
-//            );
-//            $user->setId($item->id);
-//            array_push($users, $user);
-//        }
-//
-//        return $users;
-//    }
-
     public function add($data)
     {
         $dataFile = $this->loadDataFile();

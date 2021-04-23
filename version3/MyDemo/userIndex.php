@@ -23,33 +23,9 @@ $usersInformation = $userInformationManager->getAll();
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="user_information/table.css">
 </head>
 <style>
-    table {
-        border: 1px black solid;
-        border-collapse: collapse;
-        width: 100%;
-        height: 30px;
-        text-align: center;
-    }
-
-    th {
-        height: 30px;
-    }
-
-    td {
-        height: 25px;
-    }
-
-    tr:hover {
-        background-color: wheat;
-        cursor: pointer;
-    }
-    h1 {
-        text-align: center;
-        margin-top: 50px;
-    }
-
     form {
         margin: 20px;
         float: right;

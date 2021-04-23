@@ -66,11 +66,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </tr>
         <tr>
             <td>Điện thoại</td>
-            <td><input type="number" name="phone" pattern="^[0]\d{9,12}$" placeholder="Nhập số điện thoại"></td>
+            <td><input type="text" name="phone" pattern="^[0]\d{9,11}$" title="Số điện thoại daif từ 10 -12 số." placeholder="Nhập số điện thoại"></td>
         </tr>
         <tr>
             <td>ID Card</td>
-            <td><input type="text" name="idCard" pattern="\d[A-Z]{12}$" placeholder="Nhập số CMNN"></td>
+            <td><input type="text" name="idCard" pattern="\d{9,12}$" title="ID có 9 - 12 số." placeholder="Nhập số CMNN"></td>
         </tr>
         <tr>
             <td></td>
