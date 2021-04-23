@@ -53,11 +53,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <table>
             <tr>
                 <td>User Name</td>
-                <td><input type="text" name="userName" placeholder="Nhập tài khoản" size="50"></td>
+                <td><input type="text" name="userName" pattern="^[a-z]\w[^\s]{2,20}$" title="User name phải bắt đầu bằng chữ và không có khoảng trống!" placeholder="Nhập tài khoản" size="50"></td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="password" name="password" placeholder="Nhập mật khẩu" size="50"></td>
+                <td><input type="password" name="password" pattern="\w{6,20}$" title="Mật khẩu tối thiểu 6 ký tự." placeholder="Nhập mật khẩu" size="50"></td>
             </tr>
             <tr>
                 <td></td>
